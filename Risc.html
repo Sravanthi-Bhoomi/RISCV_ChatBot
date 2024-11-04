@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RISC ChatBot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #007bff;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 0 0 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        #chatbot-container {
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #007bff;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to RISC ChatBot</h1>
+    <p>Ask questions about the Western Digital RISC-V SweRV Core!</p>
+    
+    <!-- Chatbot integration -->
+    <div id="chatbot-container"></div>
+    
+    <!-- Embedding the chatbot logic -->
+  
+    <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "21dd3e0c-0fe4-4196-87c9-773cd15d44dc",
+        apiHost: "https://simelabs-3.app.flowiseai.com",
+    })
+</script>
+</body>
+</html>
