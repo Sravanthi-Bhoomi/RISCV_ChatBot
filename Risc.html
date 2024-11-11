@@ -3,57 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RISC ChatBot</title>
+    <title>RISC Architecture Chatbot</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Basic Reset */
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
         }
+
+        /* Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            padding: 20px;
+        }
+
         h1 {
-            color: #007bff;
-            font-size: 2em;
+            font-size: 24px;
+            color: #0066cc;
             margin-bottom: 10px;
         }
+
         p {
-            margin: 0 0 20px;
-            font-size: 1.2em;
-            color: #555;
+            font-size: 16px;
+            margin-bottom: 20px;
         }
+
+        /* Chatbot Container */
         #chatbot-container {
             width: 100%;
-            max-width: 600px;
-            border: 1px solid #007bff;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            overflow: hidden;
+            min-height: 400px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to RISC ChatBot</h1>
-    <p>Ask questions about the Western Digital RISC-V SweRV Core!</p>
-    
-    <!-- Chatbot integration -->
-    <div id="chatbot-container"></div>
-    
-    <!-- Embedding the chatbot logic -->
-  
-    <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "21dd3e0c-0fe4-4196-87c9-773cd15d44dc",
-        apiHost: "https://simelabs-3.app.flowiseai.com",
-    })
-</script>
+    <div class="container">
+        <h1>RISC Architecture Chatbot</h1>
+        <p>Welcome! This chatbot is here to assist you with any questions related to RISC architecture. Feel free to ask!</p>
+
+        <!-- Chatbot Embed -->
+        <div id="chatbot-container"></div>
+        
+        <script type="module">
+            import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+            Chatbot.init({
+                chatflowid: "6b61ca6d-0e4d-4dea-8351-6c936b66460e",
+                apiHost: "http://localhost:3000",
+            })
+        </script>
+
+        <div class="footer">
+            <p>&copy; 2024 RISC Chatbot. All rights reserved.</p>
+        </div>
+    </div>
 </body>
 </html>
