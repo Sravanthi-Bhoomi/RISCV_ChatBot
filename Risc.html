@@ -3,55 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered RISC Chatbot</title>
+    <title>RISC Chatbot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
+            padding: 20px;
         }
         .container {
-            width: 60%;
+            width: 80%;
             max-width: 600px;
             background-color: #fff;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
             text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        p.intro {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
         }
         #chatbot-container {
             margin-top: 20px;
             padding: 20px;
             border: 1px solid #ddd;
-            background-color: #f9f9f9;
             border-radius: 5px;
-        }
-        footer {
-            margin-top: 50px;
-            color: #888;
-            font-size: 0.9em;
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>RISC Knowledge Hub</h1>
-        <p class="intro">Welcome to our AI-powered RISC Chatbot. Here, you can ask questions about the RISC architecture, instruction sets, or specific technical inquiries. Get instant answers powered by advanced AI and streamline your learning process.</p>
-        
+        <h1>RISC Chatbot</h1>
+        <p>Welcome! Ask questions about RISC architecture and get instant answers.</p>
+
         <!-- Chatbot Embed -->
         <div id="chatbot-container"></div>
         
@@ -62,6 +49,7 @@
 
     <script type="module">
         import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
+        
         Chatbot.init({
             chatflowid: "6b61ca6d-0e4d-4dea-8351-6c936b66460e",
             apiHost: "http://localhost:3000",
