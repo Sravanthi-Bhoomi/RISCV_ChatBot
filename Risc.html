@@ -3,56 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RISC Chatbot</title>
+    <title>Chatbot Integration</title>
     <style>
+        /* Basic page styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
         }
-        .container {
-            width: 80%;
-            max-width: 600px;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+
+        /* Header styling */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
             text-align: center;
         }
+
+        /* Main content styling */
+        main {
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Chatbot styling */
         #chatbot-container {
-            margin-top: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            max-width: 100%;
+            height: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Initially hidden */
+        }
+
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>RISC Chatbot</h1>
-        <p>Welcome! Ask questions about RISC architecture and get instant answers.</p>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Our Website</h1>
+    </header>
 
-        <!-- Chatbot Embed -->
-        <div id="chatbot-container"></div>
-        
-        <footer>
-            Powered by FlowiseAI | <a href="https://riscv.org/">Learn more about RISC-V Architecture</a>
-        </footer>
+    <!-- Main Content -->
+    <main>
+        <h1>SweRV RISC-V core  Chatbot</h1>
+        <p>
+        Welcome! This chatbot is here to assist you with any questions related to SweRV RISC architecture. Feel free to ask!
+
+        </p>
+       
+    </main>
+
+    <!-- Chatbot Integration -->
+    <div id="chatbot-container">
+        <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "c08ea8a2-755a-4b07-a030-9ac29aeda047",
+        apiHost: "http://192.168.0.177:3000",
+    })
+</script>
+
+
     </div>
 
-    <script type="module">
-        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
-        
-        Chatbot.init({
-            chatflowid: "6b61ca6d-0e4d-4dea-8351-6c936b66460e",
-            apiHost: "http://localhost:3000",
+    <!-- Toggle button for chatbot -->
+    <div id="chatbot-toggle">Chat with us</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Our Company. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to toggle chatbot visibility -->
+    <script>
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotContainer = document.getElementById('chatbot-container');
+
+        chatbotToggle.addEventListener('click', function() {
+            if (chatbotContainer.style.display === "none") {
+                chatbotContainer.style.display = "block";
+                chatbotToggle.textContent = "Close Chat";
+            } else {
+                chatbotContainer.style.display = "none";
+                chatbotToggle.textContent = "Chat with us";
+            }
         });
     </script>
 
